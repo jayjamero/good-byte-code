@@ -1,0 +1,29 @@
+// Sample navigation
+.nav__wrap {
+   ul {
+      overflow:auto;
+      clear:both;
+      margin-bottom:20px;
+   }
+   li {
+      float:left;
+      margin-right:20px;
+   }
+   a {
+      font-family:$font__brand;
+      color:#333;
+      font-size:em(15px);
+      text-transform:uppercase;
+      text-decoration:none;
+      &:hover{
+         color:$color__brand;
+      }
+   }
+   @include query($desktopTrigger) {
+      padding: 50px 0;
+   }  
+
+   @include query($tabletTrigger) {
+      padding: 20px 0 12px;
+   }  
+}

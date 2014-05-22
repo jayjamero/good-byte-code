@@ -1,0 +1,11 @@
+name: GBC
+pygments: true
+sass:
+   syntax:  scss
+   style:   expanded
+assets:
+   cache: false
+   gzip: false
+   cachebust: none
+   #js_compressor:  uglify
+   #css_compressor: sass

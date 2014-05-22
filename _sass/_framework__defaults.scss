@@ -1,0 +1,126 @@
+/* SAMPLE CODE ONLY */
+/* ----------------------- */
+/* DEFAULT: Not required */
+.logo {
+   margin:20px 0;
+   a {
+      display:block;
+      margin:auto;
+      width:100px;
+      color:#333;
+      text-decoration:none;
+   }
+
+}
+.framework__font {
+   font-family:$font__framework;
+   text-transform:uppercase;
+   font-weight:bold;
+   font-size:em(34px);
+   line-height:1em;
+   margin-bottom:20px;
+   span {
+      color:$color__brand;
+   }
+}
+
+/* ----------------------- */
+.posts {
+   margin-bottom:20px;
+}
+
+.content {
+   h1 {
+
+   }
+   h2 {
+
+   }
+   h3 {
+
+   }
+   h4 {
+
+   }
+   h5 {
+
+   }
+   a {
+      color:$color__brand;
+      text-decoration:none;
+      border-bottom:1px dotted transparent;
+      &:hover{
+         border-bottom-color:$color__brand;
+      }
+   }
+}
+.section--header{
+   margin:40px 0 20px 0;
+   text-align:right;
+}
+.headline {
+   text-rendering: optimizeLegibility;
+   font-family: $font__brand;
+   line-height: 1em;
+   font-weight:300;
+}
+
+.headline--h1 {
+   font-size: em(96px);
+   line-height:1.2em;
+}
+
+.headline--h2 {
+   font-size: em(40px);
+}
+.headline--h3 {
+   font-size: em(36px);
+   font-weight:600;
+}
+.headline--h4 {
+   font-size: em(21px);
+}
+.headline--h5 {
+   font-size: em(16px);
+   font-weight:600;
+}
+.headline--h6 {
+   font-size: em(16px);
+   font-weight:300;
+}
+
+.l-styleguide__modifier {
+   background-color:rgba(110, 110, 60, 0.05);
+   padding:20px;
+   margin:20px 0;
+   overflow:auto;
+   clear:both;
+   .l-styleguide__modifier__info {
+      width:66%;
+      float:left;
+      padding:5px 0;
+      &:first-child {
+         padding-right:20px;
+      }
+      & + .l-styleguide__modifier__info {
+         width:30%;
+         overflow:hidden;
+         h2 {
+            font-size:em(16px);
+            margin-bottom:5px;
+            color:$color__brand;
+         }
+         p {
+            font-size:em(13px);
+            margin:0 0 5px 0;
+         }
+      }
+   }
+}
+footer {
+   padding:20px;
+   text-align:center;
+   span {
+      color:$color__brand;
+   }
+}

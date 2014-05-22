@@ -1,0 +1,148 @@
+/*
+   portable Sass library by JJ.
+   https://github.com/jayjamero
+   jayjamero@gmail.com
+*/
+
+// Helpers File
+// By Jay Jamero github.com/jayjamero
+
+// CONTENTS:
+// Functions:
+// 01.  em() - Converts PX to EM for responsive/font scaling
+
+// Mixins:
+// -- Prefixes START --
+// 01.  triangles - Creates a CSS triangle
+// 02.  keyframes - Creates keyframe set with prefixes
+// 03.  keyframes__translate - moves object from origin to destination
+// 04.  transition - Creates a css transition with prefixes
+// 05.  shadow - Creates a box shadow with prefixes
+// 06.  transform - Creates transform rule with prefixes
+// 07.  transform__origin - Bases the origin of transition (usually center point) with prefixes
+// 08.  radius - Create radius rule with prefixes
+// 09.  animation -  Creates animation with prefixes
+// 10.  background__size - Creates background sizing rule with prefixes
+// -- Prefixes END --
+
+// 11.  query - Creates a media query, (breakpoints in variables.scss)
+
+
+//converts a font size (assumed in pixels as we are taking from design file
+//assumes 16 as default
+//the "*1em" ensures the result is returned in em units
+@function em($targetSize, $baseSize:13px) {
+	$targetInEms: ($targetSize / $baseSize) * 1em;
+	@return $targetInEms;
+
+}
+
+//!Triangle
+// Creates a CSS triangle based on direction size and color
+@mixin triangle($dir, $size, $color) {
+   border: $size transparent solid;
+ 
+   @if ($dir == "top" or $dir == "up") {
+      border-bottom-color: $color;
+   }
+   @else if ($dir == "right" or $dir == "after") {
+      border-left-color: $color;
+   }
+   @else if ($dir == "bottom" or $dir == "down") {
+      border-top-color: $color;
+   }
+   @else if ($dir == "left" or $dir == "before") {
+      border-right-color: $color;
+   }
+}
+
+
+//!Keyframes
+// Creates a keyframe with prefixes
+@mixin keyframes($animationName) {
+	@each $i in $prefixes {
+		#{$i}keyframes #{$animationName} {
+	      @content;
+		}
+	}
+}
+
+//!Translate
+// TODO creates an effect from [LEFT/RIGHT, TOP/BOTTOM]
+@mixin keyframes__translate($name, $originX, $originY, $destX, $destY) {
+	@each $i in $prefixes {
+		#{$i}keyframes #{$name} {
+	      from   { 
+	         @include transform(translate($originX,$originY));
+	      }
+	      to { 
+	         @include transform(translate($destX,$destY));
+	      }
+		}
+	}
+}
+
+//!CSS3 prefixes
+//use this mofo to save us writing the prefixes each time xD, he gets spat out in an each loop
+//NOTE: we need the blank/empty guy in the list to unsure we have a non-prefixed property
+
+//!Transition
+//accepts a number of shorthand trasitions. Don't seperate them as dont know
+//how to get the current index in a loop, this seemed quicker anyway
+@mixin transition($args...){
+	@each $i in $prefixes {
+		#{$i}transition:$args;
+	}
+}
+
+//!BoxShadow
+//adds prefixes to the shadow(s) you send it xD
+@mixin shadow($args...){
+	@each $i in $prefixes {
+		#{$i}box-shadow: $args;
+	}
+}
+
+//!Transform
+@mixin transform($args) {
+	@each $i in $prefixes {
+		#{$i}transform:$args;
+	}
+}
+
+@mixin transform__origin($args) {
+	@each $i in $prefixes {
+		#{$i}transform-origin:$args;
+	}
+}
+
+@mixin radius($args) {
+	@each $i in $prefixes {
+		#{$i}border-radius:$args;
+	}
+}
+
+@mixin animation($args) {
+	@each $i in $prefixes {
+		#{$i}animation:$args;
+	}
+}
+
+@mixin background__size($args) {
+	@each $i in $prefixes {
+		#{$i}background-size:$args;
+	}
+}
+
+//non-media query media query : http://seesparkbox.com/foundry/structuring_and_serving_styles_for_older_browsers
+@mixin query($breakpoint, $ignore: false ) {
+	// how many grids of 320 do we want, converted into ems
+	@if $isEmQuery {
+		$breakpoint: em($breakpoint);
+	}
+
+
+	@media screen and (min-width: $breakpoint) {
+		@content;
+	}
+}

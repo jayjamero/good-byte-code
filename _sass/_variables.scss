@@ -1,0 +1,26 @@
+// site variables
+$isEmQuery : false;
+
+// when does the desktop layout kick in. here its binary, either below this value of above, no tablet design
+$desktopTrigger : 980px;
+$tabletTrigger : 640px;
+$mobileTrigger : 320px;
+
+// use blank string in array so we get prefix-free as final result
+$prefixes : -webkit-, -moz-, -o-, "";
+
+$textColor : #1b1a1a;
+$bodyFontSize : 14px;
+
+$font__brand : "Open Sans", sans-serif;
+$font__framework : "bebas__regular", sans-serif;
+
+$color__brand : #FF6347;
+
+//----------------------------------------------------------------------------
+
+// this IS case sensitive on stagin URL 
+// Example: #{$images}/TEST.jpg
+$images : "../images/";
+$sprite : "#{$images}sprites.png";
+

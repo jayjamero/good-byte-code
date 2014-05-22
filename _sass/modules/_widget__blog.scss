@@ -1,0 +1,10 @@
+// Sample widget file
+.blog__widget {
+
+   @include query($tabletTrigger){
+
+   }
+   @include query($desktopTrigger){
+
+   }
+}

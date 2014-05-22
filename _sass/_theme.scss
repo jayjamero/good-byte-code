@@ -1,0 +1,47 @@
+/*
+	@theme
+	various color changes, font tweaks.
+	margins / paddings should be done via layouts, 
+		applying ".brand__pink" and getting a massive bottom margin could be undesireable
+
+	body type and color
+
+	segements
+
+	misc type / theme 
+*/
+
+/*= Page Setup =*/
+html  { }
+body {
+	//font-family: "Open Sans", sans-serif;
+	font-family: $font__brand;
+	font-weight: 300;
+}
+
+.pgWidth { 
+   width: 100%; /* MOBILE FIRST */ 
+   margin: auto; 
+	
+   @include query($desktopTrigger) {
+      width:980px;
+   }  
+}
+
+/* Load whole sprite sheet 'class=sprite-NAME' */
+*[class*="sprite"] { display:inline-block; background:url($sprite); }
+// Examples: 
+// .sprite-youtube { background-position: -384px -128px; width: 67px; height: 47px; }
+//.sprite-plus { background-position: -10px -160px; width: 22px; height: 22px; }
+
+
+/* = Content = */
+.content{ 
+	h1, h2, h3, h4, h5 { margin:5px 0 10px 0; padding:0; }
+	a {  }
+   ul,
+   ol { margin-left:20px; }
+   li {}
+}
+
+.uppercase { text-transform:uppercase; }
