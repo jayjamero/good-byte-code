@@ -535,6 +535,11 @@ table {
 }
 
 /*= Header =*/
+/* line 2, ../../_sass/_layout.scss */
+#hd {
+  background: url(../images/logo.png) tomato;
+}
+
 /*= Body =*/
 /*= Footer =*/
 /*= Modules =*/

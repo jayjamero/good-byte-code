@@ -7,5 +7,9 @@ assets:
    cache: false
    gzip: false
    cachebust: none
+   sources:
+   - _assets/images          
+   - _assets/stylesheets          
+   - _assets/javascripts
    #js_compressor:  uglify
    #css_compressor: sass
