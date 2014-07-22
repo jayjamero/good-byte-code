@@ -1,11 +1,14 @@
 /*
-   portable Sass library by JJ.
+   portable Sass library
+   Jay Jamero
    https://github.com/jayjamero
    jayjamero@gmail.com
+   -- 
+   Matty Collins 
+   https://github.com/Piderman
 */
 
 // Helpers File
-// By Jay Jamero github.com/jayjamero
 
 // CONTENTS:
 // Functions:
@@ -60,11 +63,18 @@
 //!Keyframes
 // Creates a keyframe with prefixes
 @mixin keyframes($animationName) {
-	@each $i in $prefixes {
-		#{$i}keyframes #{$animationName} {
-	      @content;
-		}
-	}
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
 }
 
 //!Translate

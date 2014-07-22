@@ -1,5 +1,5 @@
 name: GBC
-pygments: true
+highlighter: pygments
 sass:
    syntax:  scss
    style:   expanded
